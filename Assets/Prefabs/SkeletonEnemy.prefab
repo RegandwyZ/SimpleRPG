@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 6622043385854403430}
   - component: {fileID: 8832604814677559455}
   - component: {fileID: 696664228541789677}
+  - component: {fileID: 8230911747466778011}
   m_Layer: 6
   m_Name: dagger_rare
   m_TagString: Untagged
@@ -302,7 +303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6ea30f220f40bdadbd30606a90e0a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collider: {fileID: 696664228541789677}
 --- !u!65 &696664228541789677
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -320,10 +320,37 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.17048179, y: 0.8134158, z: 0.14452717}
   m_Center: {x: -0.009384632, y: 0.57289076, z: -0.0001199141}
+--- !u!54 &8230911747466778011
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228432634985681619}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1964310164581193159
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +778,7 @@ GameObject:
   - component: {fileID: 6730102371398728450}
   - component: {fileID: 6501716735606817028}
   - component: {fileID: 4149829584253249991}
+  - component: {fileID: 2476513267587953122}
   m_Layer: 6
   m_Name: 'dagger_rare '
   m_TagString: Untagged
@@ -843,7 +871,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.17048179, y: 0.8134158, z: 0.14452717}
   m_Center: {x: -0.009384632, y: 0.57289076, z: -0.0001199141}
@@ -859,7 +887,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6ea30f220f40bdadbd30606a90e0a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collider: {fileID: 6501716735606817028}
+--- !u!54 &2476513267587953122
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903336814997748500}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4411779554107034970
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,8 +927,6 @@ GameObject:
   - component: {fileID: 7301667343983421180}
   - component: {fileID: 5431142364855188615}
   - component: {fileID: 6165013785135664980}
-  - component: {fileID: 851802411482910910}
-  - component: {fileID: 1934099184665505687}
   - component: {fileID: 1493611325280152287}
   - component: {fileID: 3577143290694261803}
   - component: {fileID: 1796577853479422959}
@@ -882,7 +934,7 @@ GameObject:
   - component: {fileID: 1308291839730821927}
   m_Layer: 6
   m_Name: SkeletonEnemy
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -985,48 +1037,6 @@ CapsuleCollider:
   m_Height: 1.9420614
   m_Direction: 1
   m_Center: {x: 0, y: 0.7986169, z: 0}
---- !u!54 &851802411482910910
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4411779554107034970}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1934099184665505687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4411779554107034970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90cb2af9b98e4438abeabed2ef0f1dfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageColor: {r: 0.9716981, g: 0.9579477, b: 0.9579477, a: 1}
-  flashDuration: 0.1
-  flashCount: 2
 --- !u!114 &1493611325280152287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1078,12 +1088,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackAnimation: {fileID: 1796577853479422959}
-  _leftHandWeapon: {fileID: 8832604814677559455}
-  _rightHandWeapon: {fileID: 4149829584253249991}
   normalAttackDamage: 10
   heavyAttackDamage: 20
   comboAttackDamage: 15
   spinningAttackDamage: 25
+  _leftHandWeapon: {fileID: 8832604814677559455}
+  _rightHandWeapon: {fileID: 4149829584253249991}
 --- !u!114 &1308291839730821927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,6 +1559,7 @@ GameObject:
   - component: {fileID: 9192558927399766957}
   - component: {fileID: 7176070192628217166}
   - component: {fileID: 3538595832354993284}
+  - component: {fileID: 4149854803816177356}
   m_Layer: 0
   m_Name: character_skeleton_archer_hood
   m_TagString: Untagged
@@ -1621,6 +1632,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4149854803816177356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8565329365247837217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90cb2af9b98e4438abeabed2ef0f1dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8650526695542047231
 GameObject:
   m_ObjectHideFlags: 0

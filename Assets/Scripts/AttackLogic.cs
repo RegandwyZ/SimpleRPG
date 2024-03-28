@@ -5,26 +5,35 @@ using UnityEngine;
 public class AttackLogic : MonoBehaviour
 {
     [SerializeField] private AttackAnimation _attackAnimation;
-    
-    [SerializeField] private Weapon _leftHandWeapon;
-    [SerializeField] private Weapon _rightHandWeapon;
-
     [SerializeField] private float normalAttackDamage = 10f;
     [SerializeField] private float heavyAttackDamage = 20f;
     [SerializeField] private float comboAttackDamage = 15f;
     [SerializeField] private float spinningAttackDamage = 25f;
+    
+    [SerializeField] private MonoBehaviour _leftHandWeapon;
+    [SerializeField] private MonoBehaviour _rightHandWeapon;
 
+    private IWeapon _leftHand;
+    private IWeapon _rightHand;
+
+    private void Awake()
+    {
+        _leftHand = _leftHandWeapon as IWeapon;
+        _rightHand = _rightHandWeapon as IWeapon;
+    }
+   
+    
 
     private void ActivatedWeaponCollider()
     {
-        _leftHandWeapon.Collider.enabled = true;
-        _rightHandWeapon.Collider.enabled = true;
+        _leftHand.Collider.enabled = true;
+        _rightHand.Collider.enabled = true;
     }
 
     private void DeActivatedWeaponCollider()
     {
-        _leftHandWeapon.Collider.enabled = false;
-        _rightHandWeapon.Collider.enabled = false;
+        _leftHand.Collider.enabled = false;
+        _rightHand.Collider.enabled = false;
     }
     
     private void PerformAttack(float damage, Action animationAction)
@@ -32,8 +41,8 @@ public class AttackLogic : MonoBehaviour
         if (_attackAnimation.IsAction()) return;
         
         animationAction.Invoke();
-        _leftHandWeapon.SetDamage(damage);
-        _rightHandWeapon.SetDamage(damage);
+        _leftHand.SetDamage(damage);
+        _rightHand.SetDamage(damage);
         StartCoroutine(ActivateWeaponsColliderWithDelay());
     }
     

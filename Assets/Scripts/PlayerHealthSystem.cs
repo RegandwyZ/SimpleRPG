@@ -1,11 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealthSystem : MonoBehaviour
+public class PlayerHealthSystem : MonoBehaviour
 {
     [SerializeField] private float _health;
     [SerializeField] private Animator _animator;
-    [SerializeField] private EnemyTestMoving _enemy;
-    
+
     private DamageTakenEffect _effects;
     private HealthBar _healthBar;
     
@@ -28,7 +29,6 @@ public class EnemyHealthSystem : MonoBehaviour
         if (_health <= 0)
         {
             _animator.Play("Defeat");
-            _enemy.Defeat();
         }
     }
 }

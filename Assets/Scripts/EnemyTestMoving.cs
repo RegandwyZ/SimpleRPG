@@ -9,6 +9,7 @@ public class EnemyTestMoving : MonoBehaviour
     private AttackLogic _attackLogic;
     private Player _player;
     private AttackAnimation _animation;
+    private Canvas _canvas;
 
     private void Awake()
     {
@@ -16,6 +17,7 @@ public class EnemyTestMoving : MonoBehaviour
         _attackLogic = GetComponent<AttackLogic>();
         _animation = GetComponent<AttackAnimation>();
         _player = FindObjectOfType<Player>();
+        _canvas = GetComponentInChildren<Canvas>();
     }
 
     private void Update()
@@ -35,5 +37,6 @@ public class EnemyTestMoving : MonoBehaviour
     {
         _collider.enabled = false;
         _agent.enabled = false;
+        _canvas.enabled = false;
     }
 }
